@@ -7,7 +7,7 @@ ADD . /code/
 # package the application and delete all lib
 RUN echo '{ "allow_root": true }' > /root/.bowerrc && \
     cd /code/ && \
-    ./gradlew -Pprod build -x test && \
+    ./gradlew -Pprod -PnodeInstall build -x test && \
     mv /home/jhipster/github/build/libs/*.war /home/jhipster/app.war && \
     rm -Rf /code /root/.npm/ /tmp && \
     rm -Rf /root/.gradle
