@@ -8,7 +8,7 @@ ADD . /code/
 RUN echo '{ "allow_root": true }' > /root/.bowerrc && \
     cd /code/ && \
     ./gradlew -Pprod -PnodeInstall build -x test && \
-    mv /home/jhipster/github/build/libs/*.war /home/jhipster/app.war && \
+    mv /code/build/libs/*.war /app.war && \
     rm -Rf /code /root/.npm/ /tmp && \
     rm -Rf /root/.gradle
 
